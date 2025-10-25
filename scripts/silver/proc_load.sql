@@ -122,7 +122,7 @@ begin
 	truncate table silver.erb_cust_az12
 	insert into silver.erb_cust_az12 (cid,bdate,gen)
 	select 
-	case when cid like'NAS%' then SUBSTRING(cid,3,len(cid))
+	case when cid like'NAS%' then SUBSTRING(cid,4,len(cid))
 		else cid
 	end as cid,
 	case when bdate > getdate() then null
